@@ -5,4 +5,5 @@
     <string name="text">ORDER</string>
     <string name="price">Price</string>
     <string name="price_value">$0</string>
+    <string name="plus">+</string>
 </resources>
