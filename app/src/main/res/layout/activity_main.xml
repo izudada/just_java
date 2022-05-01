@@ -34,6 +34,16 @@
         android:textSize="28sp"
         android:textStyle="bold" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/grey"
+        android:onClick="decrement"
+        android:text="@string/minus"
+        android:textColor="@color/black"
+        android:textSize="28sp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
