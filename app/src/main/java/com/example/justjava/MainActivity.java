@@ -56,4 +56,21 @@ public class MainActivity extends AppCompatActivity {
         int castingQuantity = Integer.parseInt(quantityTextView.getText().toString()) + num;
         quantityTextView.setText("" + castingQuantity);
     }
+
+    /**
+     This is a method to increase the quantity by 1
+     */
+    public void decrement(View view) {
+        TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
+        int num = 1;
+        int castingQuantity = Integer.parseInt(quantityTextView.getText().toString());
+
+        if (castingQuantity > num) {
+            castingQuantity = Integer.parseInt(quantityTextView.getText().toString()) - num;
+        } else {
+            castingQuantity = num;
+        }
+
+        quantityTextView.setText("" + castingQuantity);
+    }
 }
