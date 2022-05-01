@@ -24,7 +24,11 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        int quantity = 5;
+
+        TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
+        int quantity = Integer.parseInt(quantityTextView.getText().toString());
+
+//        int quantity = 5;
         int price = 10;
         display(quantity);
         displayPrice(quantity * price);
@@ -71,6 +75,6 @@ public class MainActivity extends AppCompatActivity {
             castingQuantity = num;
         }
 
-        quantityTextView.setText("" + castingQuantity);
+        quantityTextView.setText(castingQuantity);
     }
 }
