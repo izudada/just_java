@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
             castingQuantity = num;
         }
 
-        quantityTextView.setText(castingQuantity);
+        String stringQuantity =Integer.toString(castingQuantity);
+        quantityTextView.setText(stringQuantity);
     }
 }
