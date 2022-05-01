@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
         int num = 1;
         int castingQuantity = Integer.parseInt(quantityTextView.getText().toString()) + num;
-        quantityTextView.setText("" + castingQuantity);
+        quantityTextView.setText(castingQuantity);
     }
 
     /**
