@@ -24,23 +24,17 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-
-        TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
-        int quantity = Integer.parseInt(quantityTextView.getText().toString());
-
-//        int quantity = 5;
         int price = 10;
-        display(quantity);
+        int quantity = display();
         displayPrice(quantity * price);
     }
 
     /**
      * This method displays the given quantity value on the screen.
      */
-    private void display(int number) {
+    private int display() {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
-        String stringQuantity =Integer.toString(number);
-        quantityTextView.setText(stringQuantity);
+        return Integer.parseInt(quantityTextView.getText().toString());
     }
 
     /**
@@ -58,8 +52,8 @@ public class MainActivity extends AppCompatActivity {
     public void increment(View view) {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
         int num = 1;
-        int castingQuantity = Integer.parseInt(quantityTextView.getText().toString()) + num;
-        String stringQuantity =Integer.toString(castingQuantity);
+        int castingQuantity = display()  + num;
+        String stringQuantity = Integer.toString(castingQuantity);
         quantityTextView.setText(stringQuantity);
     }
 
@@ -69,10 +63,10 @@ public class MainActivity extends AppCompatActivity {
     public void decrement(View view) {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
         int num = 1;
-        int castingQuantity = Integer.parseInt(quantityTextView.getText().toString());
+        int castingQuantity = display();
 
         if (castingQuantity > num) {
-            castingQuantity = Integer.parseInt(quantityTextView.getText().toString()) - num;
+            castingQuantity = castingQuantity - num;
         } else {
             castingQuantity = num;
         }
