@@ -50,8 +50,10 @@ public class MainActivity extends AppCompatActivity {
     /**
         This is a method to increase the quantity by 1
      */
-    public void increment() {
+    public void increment(View view) {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
-        quantityTextView.setText("");
+        int num = 1;
+        int castingQuantity = Integer.parseInt(quantityTextView.getText().toString()) + num;
+        quantityTextView.setText("" + castingQuantity);
     }
 }
