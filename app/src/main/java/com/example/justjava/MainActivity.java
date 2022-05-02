@@ -14,6 +14,8 @@ import java.util.Locale;
  */
 public class MainActivity extends AppCompatActivity {
 
+    int num = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,17 +26,19 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        int price = 10;
-        int quantity = display();
+        TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
+        int quantity = Integer.parseInt(quantityTextView.getText().toString());
+        int price = 100;
         displayPrice(quantity * price);
     }
 
     /**
      * This method displays the given quantity value on the screen.
      */
-    private int display() {
+    private void display(int castingQuantity) {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
-        return Integer.parseInt(quantityTextView.getText().toString());
+        String stringQuantity = Integer.toString(castingQuantity);
+        quantityTextView.setText(stringQuantity);
     }
 
     /**
@@ -51,10 +55,9 @@ public class MainActivity extends AppCompatActivity {
      */
     public void increment(View view) {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
-        int num = 1;
-        int castingQuantity = display()  + num;
-        String stringQuantity = Integer.toString(castingQuantity);
-        quantityTextView.setText(stringQuantity);
+        int quantity = Integer.parseInt(quantityTextView.getText().toString());
+        int castingQuantity = quantity + num;
+        display(castingQuantity);
     }
 
     /**
@@ -62,8 +65,8 @@ public class MainActivity extends AppCompatActivity {
      */
     public void decrement(View view) {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
-        int num = 1;
-        int castingQuantity = display();
+        int quantity = Integer.parseInt(quantityTextView.getText().toString());
+        int castingQuantity = quantity;
 
         if (castingQuantity > num) {
             castingQuantity = castingQuantity - num;
@@ -71,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
             castingQuantity = num;
         }
 
-        String stringQuantity =Integer.toString(castingQuantity);
-        quantityTextView.setText(stringQuantity);
+        display(castingQuantity);
     }
 }
