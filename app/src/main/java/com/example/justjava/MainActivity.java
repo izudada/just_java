@@ -15,6 +15,7 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
 
     int num = 1;
+    int quantity = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,26 +55,20 @@ public class MainActivity extends AppCompatActivity {
         This is a method to increase the quantity by 1
      */
     public void increment(View view) {
-        TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
-        int quantity = Integer.parseInt(quantityTextView.getText().toString());
-        int castingQuantity = quantity + num;
-        display(castingQuantity);
+        quantity = quantity + num;
+        display(quantity);
     }
 
     /**
      This is a method to increase the quantity by 1
      */
     public void decrement(View view) {
-        TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
-        int quantity = Integer.parseInt(quantityTextView.getText().toString());
-        int castingQuantity = quantity;
-
-        if (castingQuantity > num) {
-            castingQuantity = castingQuantity - num;
+        if (quantity > num) {
+            quantity = quantity - num;
         } else {
-            castingQuantity = num;
+            quantity = num;
         }
 
-        display(castingQuantity);
+        display(quantity);
     }
 }
