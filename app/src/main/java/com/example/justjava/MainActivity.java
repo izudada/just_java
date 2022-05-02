@@ -27,8 +27,6 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
-        int quantity = Integer.parseInt(quantityTextView.getText().toString());
         int price = 100;
         displayPrice(quantity * price);
     }
