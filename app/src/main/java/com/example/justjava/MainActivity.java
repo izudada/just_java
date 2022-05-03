@@ -15,7 +15,7 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
 
     int num = 1;
-    int quantity = 1;
+    int quantity = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
