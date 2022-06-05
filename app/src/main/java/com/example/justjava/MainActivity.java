@@ -27,10 +27,18 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        int price = 100;
-//        displayPrice(quantity * price);
-        String priceMessage = quantity + " cups of coffee costs ₦" + (quantity * price);
+        int price = calculatePrice();
+        String priceMessage = quantity + " cups of coffee costs\n" + "₦" + price;
         displayMessage(priceMessage);
+    }
+
+    /**
+     * Calculates the price of the order.
+     *
+     * @param *quantity is the number of cups of coffee ordered
+     */
+    private int calculatePrice() {
+        return quantity * 5;
     }
 
     /**
