@@ -28,13 +28,15 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
         int price = 100;
-        displayPrice(quantity * price);
+//        displayPrice(quantity * price);
+        String priceMessage = quantity + " cups of coffee costs ₦" + (quantity * price);
+        displayMessage(priceMessage);
     }
 
     /**
      * This method displays the given quantity value on the screen.
      */
-    private void display(int castingQuantity) {
+    private void displayQuantity(int castingQuantity) {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
         String stringQuantity = Integer.toString(castingQuantity);
         quantityTextView.setText(stringQuantity);
@@ -54,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void increment(View view) {
         quantity = quantity + num;
-        display(quantity);
+        displayQuantity(quantity);
     }
 
     /**
@@ -67,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             quantity = num;
         }
 
-        display(quantity);
+        displayQuantity(quantity);
     }
 
     /**
