@@ -3,7 +3,7 @@
     <string name="string1">Quantity</string>
     <string name="value">0</string>
     <string name="text">ORDER</string>
-    <string name="price">Price</string>
+    <string name="price">Order Summary</string>
     <string name="price_value">$0</string>
     <string name="plus">+</string>
     <string name="minus">-</string>
