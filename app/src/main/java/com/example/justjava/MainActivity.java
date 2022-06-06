@@ -28,7 +28,8 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
         int price = calculatePrice();
-        String priceMessage = quantity + " cups of coffee costs\n" + "₦" + price;
+//        String priceMessage = quantity + " cups of coffee costs\n" + "₦" + price;
+        String priceMessage = createOrderSummary(price);
         displayMessage(priceMessage);
     }
 
@@ -39,6 +40,21 @@ public class MainActivity extends AppCompatActivity {
      */
     private int calculatePrice() {
         return quantity * 5;
+    }
+
+
+    /**
+     * Creates custom message for customer order summary
+     *
+     * @param price of the order
+     * @return text summary
+     */
+    private String createOrderSummary(int price) {
+        String message = "Name: Anthony Udeagbaala\n";
+        message += "Quantity: " + quantity + "\n";
+        message += "Total: " + price + "\n";
+        message += "Thank you!";
+        return message;
     }
 
     /**
