@@ -12,6 +12,15 @@
         android:orientation="vertical"
         android:padding="16dp">
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/customer_name"
+            android:backgroundTint="@color/purple_500"
+            android:hint="@string/customer_name"
+            android:inputType="textCapWords"
+            android:layout_marginBottom="16dp"
+            android:textSize="20sp"/>
 
         <TextView
             android:layout_width="wrap_content"
