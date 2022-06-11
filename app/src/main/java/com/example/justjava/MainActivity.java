@@ -95,8 +95,10 @@ public class MainActivity extends AppCompatActivity {
     public void decrement(View view) {
         if (quantity > num) {
             quantity = quantity - num;
-        } else {
-            quantity = num;
+        } else if (quantity == 1) {
+            quantity = 1;
+        }else {
+            quantity = 0;
         }
 
         displayQuantity(quantity);
