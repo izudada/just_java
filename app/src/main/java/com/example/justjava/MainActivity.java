@@ -2,6 +2,7 @@ package com.example.justjava;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -49,6 +50,10 @@ public class MainActivity extends AppCompatActivity {
     private String createOrderSummary(int price) {
         String message = "Name: Anthony Udeagbaala\n";
         message += "Quantity: " + quantity + "\n";
+        boolean isChecked = ((CheckBox) findViewById(R.id.checkbox)).isChecked();
+        if (isChecked == true) {
+            message += "Add whipped cream " + isChecked + "\n";
+        }
         message += "Total: " + price + "\n";
         message += "Thank you!";
         return message;
