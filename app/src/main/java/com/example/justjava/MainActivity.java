@@ -50,9 +50,13 @@ public class MainActivity extends AppCompatActivity {
     private String createOrderSummary(int price) {
         String message = "Name: Anthony Udeagbaala\n";
         message += "Quantity: " + quantity + "\n";
-        boolean isChecked = ((CheckBox) findViewById(R.id.checkbox)).isChecked();
-        if (isChecked == true) {
-            message += "Add whipped cream " + isChecked + "\n";
+        boolean cream = ((CheckBox) findViewById(R.id.cream)).isChecked();
+        boolean chocolate = ((CheckBox) findViewById(R.id.chocolate)).isChecked();
+        if (cream == true) {
+            message += "Add whipped cream " + cream + "\n";
+        }
+        if (chocolate == true) {
+            message += "Add whipped cream " + chocolate + "\n";
         }
         message += "Total: " + price + "\n";
         message += "Thank you!";
