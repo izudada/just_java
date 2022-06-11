@@ -86,10 +86,11 @@ public class MainActivity extends AppCompatActivity {
         This is a method to increase the quantity by 1
      */
     public void increment(View view) {
-        quantity = quantity + num;
         if (quantity == 100) {
-            Toast.makeText(this, "You can order more  than 100 cups of coffee", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "You can't order more  than 100 cups of coffee", Toast.LENGTH_SHORT).show();
             return;
+        } else {
+            quantity = quantity + num;
         }
         displayQuantity(quantity);
     }
