@@ -10,4 +10,6 @@
     <string name="check">Whipped Cream</string>
     <string name="topping">Toppings</string>
     <string name="chocolate">Chocolate</string>
+    <string name="customer_name">Name</string>
+
 </resources>
