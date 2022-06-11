@@ -3,6 +3,7 @@ package com.example.justjava;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,9 +26,11 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        int price = calculatePrice();
-//        String priceMessage = quantity + " cups of coffee costs\n" + "₦" + price;
-        String priceMessage = createOrderSummary(price);
+        boolean cream = ((CheckBox) findViewById(R.id.cream)).isChecked();
+        boolean chocolate = ((CheckBox) findViewById(R.id.chocolate)).isChecked();
+        String customerName   = ((EditText) findViewById(R.id.customer_name)).getText().toString();
+        int price = calculatePrice(cream, chocolate);
+        String priceMessage = createOrderSummary(price, customerName, cream, chocolate);
         displayMessage(priceMessage);
     }
 
@@ -36,8 +39,15 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param *quantity is the number of cups of coffee ordered
      */
-    private int calculatePrice() {
-        return quantity * 5;
+    private int calculatePrice(boolean cream, boolean choco) {
+        int basePrice = 5;
+        if (cream == true) {
+            basePrice += 1;
+        }
+        if (choco == true) {
+            basePrice += 2;
+        }
+        return quantity * basePrice;
     }
 
 
@@ -47,16 +57,15 @@ public class MainActivity extends AppCompatActivity {
      * @param price of the order
      * @return text summary
      */
-    private String createOrderSummary(int price) {
-        String message = "Name: Anthony Udeagbaala\n";
+    private String createOrderSummary(int price, String name, boolean item1, boolean item2) {
+        String message = "Name: " + name +  "\n";
         message += "Quantity: " + quantity + "\n";
-        boolean cream = ((CheckBox) findViewById(R.id.cream)).isChecked();
-        boolean chocolate = ((CheckBox) findViewById(R.id.chocolate)).isChecked();
-        if (cream == true) {
-            message += "Add whipped cream " + cream + "\n";
+
+        if (item1 == true) {
+            message += "Add whipped cream " + item1 + "\n";
         }
-        if (chocolate == true) {
-            message += "Add whipped cream " + chocolate + "\n";
+        if (item2 == true) {
+            message += "Add whipped cream " + item2 + "\n";
         }
         message += "Total: " + price + "\n";
         message += "Thank you!";
