@@ -101,7 +101,8 @@ public class MainActivity extends AppCompatActivity {
         if (quantity > num) {
             quantity = quantity - num;
         } else if (quantity == 1) {
-            quantity = 1;
+            Toast.makeText(this, "You can order less than 1 cup of coffee", Toast.LENGTH_SHORT).show();
+            return;
         }else {
             quantity = 0;
         }
